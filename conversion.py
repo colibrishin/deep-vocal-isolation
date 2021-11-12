@@ -13,6 +13,7 @@ from math import ceil
 import argparse
 from matplotlib.cm import get_cmap
 import console
+import soundfile as sf
 
 
 def load_audio_file(file_path):
@@ -21,7 +22,9 @@ def load_audio_file(file_path):
 
 
 def save_audio_file(audio_file, file_path, sample_rate):
-    librosa.output.write_wav(file_path, audio_file, sample_rate, norm=False)
+    # = librose.output is deprecated =
+    #librosa.output.write_wav(file_path, audio_file, sample_rate, norm=False)
+    sf.write(file_path, audio_file, sample_rate)
     console.info("Wrote audio file to", file_path)
 
 

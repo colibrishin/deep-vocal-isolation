@@ -20,7 +20,7 @@ import sys
 import signal
 
 import numpy as np
-from keras.utils import plot_model
+from keras.utils.vis_utils import plot_model
 
 import console
 import conversion
